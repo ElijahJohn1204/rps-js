@@ -28,7 +28,22 @@ function playRound(humanChoice, computerChoice) {
         console.log("I suppose no one ever taught you that " + computerChoice + " beats " + humanChoice + "!! Pitiful attempt, no mere mortal can defeat me!!");
         computerScore++;
     } else {
-        console.log("Egads!! You have had a stroke of luck. I hate to admit that " + humanChoice + " beats " + computerChoice + "?? Bet you won't play me again!")
+        console.log("Egads!! You have had a stroke of luck. I hate to admit that " + humanChoice + " beats " + computerChoice + " :(");
         humanScore++;
+    }
+}
+
+function playGame() {
+    for (let i = 0; i < 5; i++) {
+        humanChoice = getHumanChoice();
+        computerChoice = getComputerChoice();
+        playRound(humanChoice, computerChoice);
+    }
+    if (humanScore < computerScore) {
+        console.log("I have defeated you by a score of " + computerScore + " to " + humanScore + "!! Can't say I'm surprised :D");
+    } else if (humanScore == computerScore) {
+        console.log("How anticlimactic!! We each have a score of " + humanScore + "!! Dare you to play again >:)")
+    } else {
+        console.log("My word!! How can this be? You managed to beat me by a score of " + humanScore + " to " + computerScore + "!! Don't get cocky, now!! Be a man, and play me again >:(") 
     }
 }
